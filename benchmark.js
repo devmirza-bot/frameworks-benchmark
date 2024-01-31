@@ -16,8 +16,8 @@ const frameworks = [
     {
         name: 'Vue 3',
         library: Vue,
-   	render: (data) => data.map((item) => Vue.h('div', { key: item.id }, item.id))
-    }
+        render: (data) => data.map((item) => Vue.h('div', { key: item.id }, item.id))
+    },
     // Add other frameworks here
 ];
 
