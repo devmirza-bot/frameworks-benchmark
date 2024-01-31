@@ -46,8 +46,9 @@ Open the `index.html` file to view the benchmark results in a user-friendly web 
 
 ## Frameworks Tested
 
-- React
-- Next.js
+- React 18
+- Next.js 14
+- Vue 3
 
 ## Contributing
 
