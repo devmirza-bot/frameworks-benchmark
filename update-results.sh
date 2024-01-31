@@ -1,3 +1,5 @@
+npm install
+
 node benchmark.js
 
 git config --global user.name 'devmirza-bot'
