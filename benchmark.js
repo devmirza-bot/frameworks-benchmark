@@ -1,17 +1,23 @@
 const React = require('react');
+const Vue = require('vue');
 const fs = require('fs');
 
 const frameworks = [
     {
-        name: 'React',
+        name: 'React 18',
         library: React,
         render: (data) => data.map((item) => React.createElement('div', { key: item.id }, item.name)),
     },
     {
-        name: 'Next.js',
+        name: 'Next.js 14',
         library: require('next'),
         render: (data) => React.createElement('div', null, data.map((item) => React.createElement('div', { key: item.id }, item.name))),
     },
+    {
+        name: 'Vue 3',
+        library: Vue,
+   	render: (data) => data.map((item) => Vue.h('div', { key: item.id }, item.id))
+    }
     // Add other frameworks here
 ];
 
