@@ -32,14 +32,14 @@ const runBenchmark = () => {
         const startTime = performance.now();
         const renderedOutput = framework.render(data);
         const endTime = performance.now();
-        const elapsedTime = endTime - startTime;
+        const elapsedTimeInSeconds = (endTime - startTime) / 1000;
 
         results.push({
             name: framework.name,
-            time: elapsedTime.toFixed(4),
+            time: elapsedTimeInSeconds.toFixed(4),
         });
 
-        console.log(`${framework.name} took ${elapsedTime.toFixed(4)} milliseconds to render.`);
+        console.log(`${framework.name} took ${elapsedTimeInSeconds.toFixed(4)} seconds to render.`);
     });
 
     const lastUpdated = new Date()
