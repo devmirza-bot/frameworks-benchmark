@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Framework Benchmark Results</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        color: #495057;
+      }
+
+      h1 {
+        color: #343a40;
+        margin-bottom: 20px;
+      }
+
+      #results {
+        margin-top: 20px;
+        width: 80%;
+        max-width: 600px;
+        text-align: left;
+      }
+
+      .result {
+        margin-bottom: 10px;
+        padding: 15px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      #last-updated {
+        margin-top: 20px;
+        color: #6c757d;
+        font-size: 0.8em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Framework Benchmark Results</h1>
+    <div id="results"></div>
+    <div id="last-updated"></div>
+    <script>
+      function loadAndDisplayResults() {
+        fetch("benchmark_output.json")
+          .then((response) => response.json())
+          .then((data) => {
+            const resultsDiv = document.getElementById("results");
+            const lastUpdatedDiv = document.getElementById("last-updated");
+
+            resultsDiv.innerHTML = ""; // Clear existing results
+
+            data.results.forEach((result) => {
+              const resultElement = document.createElement("div");
+              resultElement.className = "result";
+              resultElement.textContent = `${result.name}: ${result.time} milliseconds`;
+              resultsDiv.appendChild(resultElement);
+            });
+
+            // Display Last Updated At
+            lastUpdatedDiv.textContent = `Last Updated At: ${data.lastUpdated}`;
+          })
+          .catch((error) =>
+            console.error("Error loading benchmark results:", error)
+          );
+      }
+
+      // Load and display results initially
+      loadAndDisplayResults();
+
+      // Refresh results every 1 minute
+      setInterval(loadAndDisplayResults, 1 * 60 * 1000);
+    </script>
+  </body>
+</html>
