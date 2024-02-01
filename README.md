@@ -1,6 +1,6 @@
 # Framework Benchmarking Project (Beta)
 
-![image](https://github.com/devmirza-bot/frameworks-benchmark/assets/142266648/bce7878e-0ba9-4e78-988a-476cc6fa4efb)
+![image](https://github.com/devmirza-bot/frameworks-benchmark/assets/53424436/2b5158d0-bf1b-45a2-afeb-511e26d8c9a8)
 
 ## Overview
 
