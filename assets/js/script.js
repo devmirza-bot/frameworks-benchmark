@@ -1,3 +1,9 @@
+/**
+ * Fetches benchmark results from 'benchmark_output.json' and displays them on the page.
+ * Also includes a bar chart visualizing rendering times and information about the fastest framework.
+ * @function
+ * @returns {void}
+ */
 function loadAndDisplayResults() {
     fetch("benchmark_output.json")
         .then((response) => response.json())
