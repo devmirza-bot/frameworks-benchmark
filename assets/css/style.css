@@ -1,71 +1,87 @@
+/* assets/css/style.css */
+
+/* General styles */
 body {
-  font-family: "Ariel", sans-serif;
-  background-color: #f8f9fa;
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  color: #495057;
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Title styles */
 h1 {
-  color: #343a40;
-  margin-bottom: 20px;
+  text-align: center;
 }
 
+/* Result styles */
 #results {
-  margin-top: 20px;
-  width: 80%;
-  max-width: 600px;
-  text-align: left;
+  margin: 0 auto;
+  padding: 15px;
+  text-align: center;
+  background-color: #fff; /* Add a background color if needed */
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
 }
 
 .result {
   margin-bottom: 10px;
-  padding: 15px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Chart styles */
 #chart-container {
-  margin-top: 20px;
-  width: 80%;
-  max-width: 800px;
-}
-
-#benchmark-chart {
-  margin-top: 20px;
-}
-
-#last-updated {
-  margin-top: 20px;
-  color: #6c757d;
-  font-size: 0.8em;
-}
-
-#fastest-framework {
-  margin-top: 20px;
-  font-weight: bold;
-}
-
-#loading {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.5em;
-  color: #6c757d;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.8);
+  margin: 0 auto;
+  padding: 15px;
+  background-color: #fff; /* Add a background color if needed */
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
 }
 
-.hidden {
-  display: none;
+canvas {
+  max-width: 100%;
+}
+
+/* Last updated styles */
+#last-updated {
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: #f2f2f2;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+/* Fastest framework styles */
+#fastest-framework {
+  text-align: center;
+  background-color: #e6ffe6;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  #results,
+  #chart-container,
+  #last-updated,
+  #fastest-framework {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .result {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
 }
