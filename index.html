@@ -4,50 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Framework Benchmark Results</title>
-    <style>
-      body {
-        font-family: "Arial", sans-serif;
-        background-color: #f8f9fa;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        color: #495057;
-      }
-
-      h1 {
-        color: #343a40;
-        margin-bottom: 20px;
-      }
-
-      #results {
-        margin-top: 20px;
-        width: 80%;
-        max-width: 600px;
-        text-align: left;
-      }
-
-      .result {
-        margin-bottom: 10px;
-        padding: 15px;
-        background-color: #ffffff;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      #last-updated {
-        margin-top: 20px;
-        color: #6c757d;
-        font-size: 0.8em;
-      }
-    </style>
+    <!-- Include Chart.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/assets/css/style.css" />
   </head>
   <body>
     <h1>Framework Benchmark Results</h1>
     <div id="results"></div>
+    <div id="chart-container">
+      <canvas id="benchmark-chart"></canvas>
+    </div>
+    <div id="fastest-framework"></div>
     <div id="last-updated"></div>
     <script>
       function loadAndDisplayResults() {
@@ -56,8 +23,14 @@
           .then((data) => {
             const resultsDiv = document.getElementById("results");
             const lastUpdatedDiv = document.getElementById("last-updated");
+            const chartContainer = document.getElementById("chart-container");
+            const fastestFrameworkDiv =
+              document.getElementById("fastest-framework");
 
             resultsDiv.innerHTML = ""; // Clear existing results
+            fastestFrameworkDiv.innerHTML = "";
+
+            const results = data.results;
 
             data.results.forEach((result) => {
               const resultElement = document.createElement("div");
@@ -68,6 +41,45 @@
 
             // Display Last Updated At
             lastUpdatedDiv.textContent = `Last Updated At: ${data.lastUpdated}`;
+
+            const chartData = {
+              labels: results.map((result) => result.name),
+              datasets: [
+                {
+                  label: "Rendering Time (seconds)",
+                  backgroundColor: "rgba(75, 192, 192, 0.2)",
+                  borderColor: "rgba(75, 192, 192, 1)",
+                  borderWidth: 1,
+                  data: results.map((result) => parseFloat(result.time)),
+                },
+              ],
+            };
+
+            const chartOptions = {
+              scales: {
+                y: {
+                  beginAtZero: true,
+                },
+              },
+            };
+
+            const benchmarkChart = new Chart(
+              document.getElementById("benchmark-chart"),
+              {
+                type: "bar",
+                data: chartData,
+                options: chartOptions,
+              }
+            );
+
+            const fastestFramework = results.reduce((fastest, current) => {
+              return parseFloat(current.time) < parseFloat(fastest.time)
+                ? current
+                : fastest;
+            }, results[0]);
+
+            // Display information about the fastest framework
+            fastestFrameworkDiv.textContent = `Fastest Framework: ${fastestFramework.name} (${fastestFramework.time} seconds)`;
           })
           .catch((error) =>
             console.error("Error loading benchmark results:", error)
