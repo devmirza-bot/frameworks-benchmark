@@ -1,12 +1,16 @@
 document.addEventListener('DOMContentLoaded', function () {
     function showLoading() {
         const loadingDiv = document.getElementById('loading');
-        loadingDiv.classList.remove('hidden');
+        if (loadingDiv) {
+            loadingDiv.style.display = 'block';
+        }
     }
 
     function hideLoading() {
         const loadingDiv = document.getElementById('loading');
-        loadingDiv.classList.add('hidden');
+        if (loadingDiv) {
+            loadingDiv.style.display = 'none';
+        }
     }
 
     /**
