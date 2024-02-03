@@ -38,6 +38,28 @@ const generateSampleData = (length) =>
     Array.from({ length }, (_, index) => ({ id: index, name: `Item ${index}` }));
 
 /**
+ * Save results to a historical log file
+ * @param {Array} results - Array of benchmark results
+ * @param {Date} timestamp - Timestamp of the benchmark run
+ */
+function saveToHistory(results, timestamp) {
+    try {
+        let historicalData = [];
+
+        // Check if the file exists
+        if (fs.existsSync('historical_log.json')) {
+            historicalData = JSON.parse(fs.readFileSync('historical_log.json', 'utf-8'));
+        }
+
+        historicalData.push({ results, timestamp });
+        fs.writeFileSync('historical_log.json', JSON.stringify(historicalData, null, 2));
+        console.log('Results saved to historical log.');
+    } catch (error) {
+        console.error('Error saving results to historical log:', error);
+    }
+}
+
+/**
  * Runs the benchmark for various frameworks.
  * @function
  * @returns {void}
@@ -72,6 +94,10 @@ const runBenchmark = () => {
     });
 
     const lastUpdated = new Date()
+
+    const timestamp = new Date()
+
+    saveToHistory(results, timestamp)
 
     /**
      * Represents the overall benchmark results.
