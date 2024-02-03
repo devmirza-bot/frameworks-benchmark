@@ -2,14 +2,6 @@ const React = require('react');
 const Vue = require('vue');
 const fs = require('fs');
 
-document.addEventListener("DOMContentLoaded", function () {
-    // Wait for the DOM to be fully loaded before adding event listeners
-    const button = document.getElementById("run-benchmark-button");
-    if (button) {
-        button.addEventListener("click", runBenchmark);
-    }
-});
-
 /**
  * Represents a framework used in the benchmark.
  * @typedef {Object} Framework
@@ -51,10 +43,7 @@ const generateSampleData = (length) =>
  * @returns {void}
  */
 const runBenchmark = () => {
-    // Get user-defined settings
-    const numItems = parseInt(document.getElementById('num-items').value, 10) || 1000;
-
-    const data = generateSampleData(numItems);
+    const data = generateSampleData(1000);
     const results = [];
 
     frameworks.forEach((framework) => {
