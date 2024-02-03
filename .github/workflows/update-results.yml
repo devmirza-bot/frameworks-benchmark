@@ -10,12 +10,12 @@ jobs:
   health_check_job:
     strategy:
       matrix:
-        os: ['ubuntu-latest']
+        os: ["ubuntu-latest"]
     runs-on: ${{ matrix.os }}
     name: update results
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Run Shell Script
         id: shell_script_run
