@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test')
 
 test('Run Benchmark and check for results', async ({ page }) => {
-    await page.goto("http://localhost:3000")
+    await page.goto("https://devmirza-bot.github.io/frameworks-benchmark/")
 
     await page.click('#run-benchmark-btn')
 
