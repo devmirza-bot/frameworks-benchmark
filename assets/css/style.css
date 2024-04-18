@@ -158,9 +158,16 @@ canvas {
 }
 
 /* Fastest framework styles */
-#fastest-framework {
+.light-mode #fastest-framework {
   text-align: center;
   background-color: #e6ffe6;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.dark-mode #fastest-framework {
+  text-align: center;
+  background-color: #4d4d4d;
   padding: 15px;
   border-radius: 5px;
   margin-bottom: 20px;
