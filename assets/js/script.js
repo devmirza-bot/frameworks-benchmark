@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Function to toggle between light and dark mode
   // Function to toggle between light and dark mode
   function toggleMode() {
-    const body = document.body;;
+    const body = document.body;
     console.log(body.classList);
     // Toggle between dark-mode and light-mode classes
     if (body.classList.contains("dark-mode")) {
