@@ -1,7 +1,6 @@
 npm install
 
 node benchmark.js
-node update-screenshot.js
 
 git config --global user.name 'devmirza-bot'
 git config --global user.email 'mirzazaid4740@gmail.com'
