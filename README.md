@@ -2,7 +2,7 @@
 
 [![Frameworks Benchmark Results](https://github.com/devmirza-bot/frameworks-benchmark/actions/workflows/update-results.yml/badge.svg)](https://github.com/devmirza-bot/frameworks-benchmark/actions/workflows/update-results.yml) [![pages-build-deployment](https://github.com/devmirza-bot/frameworks-benchmark/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/devmirza-bot/frameworks-benchmark/actions/workflows/pages/pages-build-deployment)
 
-![image](https://github.com/devmirza-bot/frameworks-benchmark/assets/142266648/f77aae71-560a-40ce-814c-b4aab8d24f00)
+![Website Screenshot](https://github.com/devmirza-bot/frameworks-benchmark/assets/142266648/f77aae71-560a-40ce-814c-b4aab8d24f00)
 
 ## Overview
 
