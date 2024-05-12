@@ -8,6 +8,8 @@
 
 This project aims to benchmark the rendering performance of various web frameworks. The included script evaluates the rendering time of sample data using different frameworks and outputs the results to a JSON file.
 
+> Right now the Vue 3 is the fastest framework
+
 ## Getting Started
 
 ### Prerequisites
