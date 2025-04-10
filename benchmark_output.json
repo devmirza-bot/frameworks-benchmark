@@ -2,20 +2,20 @@
   "results": [
     {
       "name": "React 18",
-      "time": "0.0033"
+      "time": "0.0032"
     },
     {
       "name": "Next.js 14",
-      "time": "0.0058"
+      "time": "0.0046"
     },
     {
       "name": "Next.js 13",
-      "time": "0.0029"
+      "time": "0.0030"
     },
     {
       "name": "Vue 3",
-      "time": "0.0025"
+      "time": "0.0030"
     }
   ],
-  "lastUpdated": "4/10/2025, 6:25:01 AM"
+  "lastUpdated": "4/10/2025, 6:47:18 AM"
 }
