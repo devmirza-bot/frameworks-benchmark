@@ -6,16 +6,16 @@
     },
     {
       "name": "Next.js 14",
-      "time": "0.0053"
-    },
-    {
-      "name": "Next.js 13",
       "time": "0.0049"
     },
     {
+      "name": "Next.js 13",
+      "time": "0.0029"
+    },
+    {
       "name": "Vue 3",
-      "time": "0.0039"
+      "time": "0.0040"
     }
   ],
-  "lastUpdated": "11/28/2025, 5:42:55 AM"
+  "lastUpdated": "11/28/2025, 5:52:41 AM"
 }
